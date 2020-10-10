@@ -1,0 +1,26 @@
+<annotation>
+	<folder>BoggleObjectTrainingData</folder>
+	<filename>1976-Boggle.jpg</filename>
+	<path>/home/jordan/Documents/Senior Project/boggle-solver-master/BoggleObjectTrainingData/1976-Boggle.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1200</width>
+		<height>900</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>boggle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>679</xmin>
+			<ymin>307</ymin>
+			<xmax>1178</xmax>
+			<ymax>736</ymax>
+		</bndbox>
+	</object>
+</annotation>
