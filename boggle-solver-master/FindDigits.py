@@ -275,7 +275,7 @@ def find_largest_feature(inp_img, scan_tl=None, scan_br=None):
 
 
 def extract_digit(img, rect, size):
-	"""Extracts a digit (if one exists) from a Sudoku square."""
+	"""Extracts a digit (if one exists) from a boggle square."""
 
 	digit = cut_from_rect(img, rect)  # Get the digit box from the whole square
 
