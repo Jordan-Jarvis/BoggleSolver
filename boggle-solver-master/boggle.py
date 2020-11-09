@@ -144,4 +144,3 @@ print( " Word\tPoints")
 print( "--------------")
 for item in sorted(wordset):
     print (item+"\t"+str(word_score(item)))
-
