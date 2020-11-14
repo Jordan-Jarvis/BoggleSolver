@@ -9,7 +9,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import tensorflow as tf
 import tensorflow.keras as keras
-
+import boggle1 as bg
 
 def ShowFinalImage(queue1, queue2):
     while True:

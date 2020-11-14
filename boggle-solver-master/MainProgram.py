@@ -30,7 +30,7 @@ def main():
 	p = mp.Process(target=tw.ShowFinalImage, args=(ProcessedDigits, FinalImages))
 	p.start()
 	nn = mp.Process(target = tw.NeuralNetworkThread, args=(DigitsQueue, processQueue))
-	#nn.start()
+	nn.start()
 
 	boardFound = 1
 	cap = cv2.VideoCapture(0)

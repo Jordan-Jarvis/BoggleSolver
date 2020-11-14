@@ -55,11 +55,14 @@ def train(entries):
     X_train, X_test, y_train, y_test = train_test_split(images,trainY, test_size=.5)
 
     i = input("type y to re-train the model before running tests, otherwise press enter: ")
-
+    j = input("Would you like to run your laptop as a heater? (run more intense training)")
 
     if (i == "y"):
         trainedModel = TF_test.train(X_train, X_test, y_train, y_test)
         tf.saved_model.save(trainedModel, 'TrainedBoggle')
+        while j == "y":
+            trainedModel = TF_test.train(X_train, X_test, y_train, y_test)
+
     else:
         trainedModel = keras.models.load_model('TrainedBoggle')
         
