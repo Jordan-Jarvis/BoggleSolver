@@ -53,9 +53,11 @@ def train(entries):
     trainY = np.array(trainY)
     print(trainY)
     X_train, X_test, y_train, y_test = train_test_split(images,trainY, test_size=.5)
-
-    i = input("type y to re-train the model before running tests, otherwise press enter: ")
-    j = input("Would you like to run your laptop as a heater? (run more intense training)")
+    if __name__ == '__main__':
+        i = input("type y to re-train the model before running tests, otherwise press enter: ")
+        j = input("Would you like to run your laptop as a heater? (run more intense training)")
+    else:
+        i = "n"
 
     if (i == "y"):
         trainedModel = TF_test.train(X_train, X_test, y_train, y_test)
@@ -67,15 +69,16 @@ def train(entries):
         trainedModel = keras.models.load_model('TrainedBoggle')
         
     
-
+    #RUN TEST ON NN
     y_test_pred = trainedModel.predict_classes(X_test, verbose=0)
     print('First 3 predictions: ', yRepresentations[y_test_pred[1]])
-    print('First 3 actuals:     ', y_test[:8])
-    while(True):
-        cv2.imshow( "uuu", X_test[1].reshape(63,63) )
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    exit()
+    print('First 3 actuals:     ', yRepresentations[y_test[1]])
+    return yRepresentations[y_test_pred[1]] == yRepresentations[y_test[1]]
 
-entries = os.listdir('boggleTrain/')
-train(entries)
+def run():
+    entries = os.listdir('boggleTrain/')
+    return train(entries)
+if __name__ == '__main__':
+    run()
+
+

@@ -4,7 +4,6 @@ import logging
 import time
 import numpy as np
 
-# logging.basicConfig(level=logging.INFO)
 size = X, Y = 4, 4
 grid = {}
 neighbours = {}
@@ -144,7 +143,7 @@ def word_score(word):
 def SolveBoard(board):
     size = X, Y = 4, 4
 
-    #board = ['I','C','E','N','Y','A','U','A','P','Q','R','I','E','I','P','U']
+    board = ['I','C','E','N','Y','A','U','A','P','Q','R','I','E','I','P','U']
     global grid
     global neighbours
     global dictionary
@@ -162,6 +161,8 @@ def SolveBoard(board):
     print ("Found "+str(totalwords) + " words:")
     print (" Word\tPoints")
     print ("--------------")
+    returnList = []
     for item in sorted(wordset):
         print (item+"\t"+str(word_score(item)))
-
+        returnList.append((item,word_score(item)))
+    return returnList
