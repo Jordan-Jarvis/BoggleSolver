@@ -1,9 +1,12 @@
 def main():
     boggle()
     NN()
+
+    
 def NN():
     import TrainBoggle
     return TrainBoggle.run()
+    
 def boggle():
     import boggle1 
     #main runs a test of the boggle accuracy.
