@@ -10,6 +10,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 import tensorflow.keras as keras
 import boggle1 as bg
+from GUI import *
 
 def ShowFinalImage(queue1, queue2):
     while True:
@@ -36,6 +37,7 @@ def AttemptBoggleSolve(InputQueue, ProcessedDigits, FinalImage, DigitsQueue):
         digits = np.array(digits)
         if DigitsQueue.qsize() < 10:
             DigitsQueue.put((digits,cropped))
+        
 
 def NeuralNetworkThread(DigitsQueue, processQueue):
     trainedModel = keras.models.load_model('TrainedBoggle')
@@ -64,7 +66,7 @@ def NeuralNetworkThread(DigitsQueue, processQueue):
         for i in range(len(PredictedVals)):
             if PredictedVals[i] == 'Q':
                 PredictedVals[i] = "Qu"
-        bg.SolveBoard(PredictedVals)
+        listBox(bg.SolveBoard(PredictedVals))
         while(True):
             cv2.imshow( "FinalImage", cropped )
             if cv2.waitKey(1) & 0xFF == ord('q'):

@@ -7,11 +7,13 @@ from dlxsudoku import Sudoku
 import FindDigits as cw
 import multiprocessing as mp
 import os
+import sys
 import ThreadWorker as tw
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-
+os.chdir(os.path.dirname(sys.argv[0]))
 import tensorflow as tf
 import tensorflow.keras as keras
+
 def main():
 	skipped = 0
 	boardType = 'boggle'	

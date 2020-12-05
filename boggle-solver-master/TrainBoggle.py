@@ -10,8 +10,9 @@ import TF_test
 import tensorflow as tf
 import tensorflow.keras as keras
 import tensorflow as tf
+import sys
 print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
-
+os.chdir(os.path.dirname(sys.argv[0]))
 def train(entries):
     runFirst = 0
     nonFlattendImages = []
