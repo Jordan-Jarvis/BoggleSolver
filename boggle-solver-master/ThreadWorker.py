@@ -67,7 +67,4 @@ def NeuralNetworkThread(DigitsQueue, processQueue):
             if PredictedVals[i] == 'Q':
                 PredictedVals[i] = "Qu"
         listBox(bg.SolveBoard(PredictedVals))
-        while(True):
-            cv2.imshow( "FinalImage", cropped )
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+

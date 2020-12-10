@@ -143,7 +143,7 @@ def word_score(word):
 def SolveBoard(board):
     size = X, Y = 4, 4
 
-    board = ['I','C','E','N','Y','A','U','A','P','Q','R','I','E','I','P','U']
+    #board = ['I','C','E','N','Y','A','U','A','P','Q','R','I','E','I','P','U']
     global grid
     global neighbours
     global dictionary
