@@ -69,9 +69,19 @@ def train(entries):
     else:
         trainedModel = keras.models.load_model('TrainedBoggle')
         
-    
-    #RUN TEST ON NN
-    y_test_pred = trainedModel.predict_classes(X_test, verbose=0)
+
+
+# Save the model.
+    converter = tf.lite.TFLiteConverter.from_keras_model(TF_test)
+    tflite_model = converter.convert()
+    with open('model.tflite', 'wb') as f:
+        f.write(tflite_model)
+
+
+# Save the model.
+    with open('model.tflite', 'wb') as f:
+        f.write(tflite_model)
+
     print('First 3 predictions: ', yRepresentations[y_test_pred[1]])
     print('First 3 actuals:     ', yRepresentations[y_test[1]])
     return yRepresentations[y_test_pred[1]] == yRepresentations[y_test[1]]

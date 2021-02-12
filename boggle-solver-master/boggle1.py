@@ -97,7 +97,7 @@ def search(path):
 def get_dictionary():
     """Return a list of uppercase english words, including word stems"""
     stems, dictionary = set(), set()
-    with open('words.txt') as f:
+    with open('usa2.txt') as f:
         for word in f:
             word = word.strip().upper()
             dictionary.add(word)
